@@ -35,13 +35,13 @@ export default function Navbar({ openModal }) {
         isSticky ? "bg-white shadow-xl" : "bg-transparent"
       }`}
     >
-      <div className="flex items-center justify-between max-w-6xl p-4 mx-auto">
+      <div className="flex justify-between items-center p-4 mx-auto max-w-6xl">
         <h1 className="mr-16 text-xl font-bold text-gray-800 whitespace-nowrap">
           Devis Aruna Devi D
         </h1>
 
         {/* Desktop Navigation */}
-        <div className="hidden space-x-6 md:flex">
+        <div className="hidden space-x-6 lg:flex">
           {navLinks.map((link) => (
             <button
               key={link}
@@ -57,7 +57,7 @@ export default function Navbar({ openModal }) {
         </div>
 
         {/* Mobile Menu Button */}
-        <div className="md:hidden">
+        <div className="lg:hidden">
           <button
             onClick={toggleMenu}
             className="text-gray-800 focus:outline-none"
@@ -69,10 +69,10 @@ export default function Navbar({ openModal }) {
 
       {/* Mobile Navigation */}
       <div
-        className={`md:hidden bg-white w-full transition-all duration-300 ease-in-out transform ${
+        className={`lg:hidden bg-white w-full transition-all duration-300 ease-in-out transform ${
           isOpen
-            ? "max-h-screen opacity-100 py-4"
-            : "max-h-0 opacity-0 overflow-hidden"
+            ? "py-4 max-h-screen opacity-100"
+            : "overflow-hidden max-h-0 opacity-0"
         }`}
       >
         <div className="flex flex-col items-center space-y-4">
