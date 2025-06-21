@@ -1,12 +1,86 @@
-# React + Vite
+# 👩‍💻 Personal Portfolio - Devis Aruna Devi D
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📌 Overview
 
-Currently, two official plugins are available:
+Welcome to my **Personal Portfolio** built with **React** and **Tailwind CSS**!  
+This website showcases my skills, projects, certifications, and achievements in **Full Stack Development**. It reflects my passion for creating impactful web solutions and my journey as a computer science student at Velammal College of Engineering and Technology.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+🌐 **Live Website:** [https://your-deployed-link.vercel.app](https://your-deployed-link.vercel.app)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🎯 Features
+
+- 🏠 **Hero Section:** Engaging introduction with call-to-action
+- 👤 **About Me:** Professional background, education, and career objectives
+- 💼 **Projects Showcase:** Interactive display of key projects with live demos
+- 🛠️ **Skills Section:** Technical skills and tools proficiency
+- 📜 **Certifications:** Professional certifications and achievements
+- 🎓 **Education:** Academic timeline and achievements
+- 📬 **Contact:** Professional contact form with email integration
+- 📱 **Responsive Design:** Optimized for all devices and screen sizes
+- ⚡ **Performance:** Fast loading with modern web technologies
+
+---
+
+## 🖥️ Tech Stack
+
+- ⚛️ **Frontend:** React + Vite
+- 🎨 **Styling:** Tailwind CSS
+- 🛠️ **Other Tools:** Framer Motion, React Icons
+
+---
+
+## 🖼️ Screenshots
+
+### 📌 Home Page
+
+_Professional introduction with engaging hero content._  
+![Home Page](./screenshots/home.png)
+
+### 📌 Projects Showcase
+
+_Interactive project gallery with detailed descriptions._  
+![Projects](./screenshots/projects.png)
+
+### 📌 Skills & Certifications
+
+_Technical skills and professional certifications._  
+![Certifications](./screenshots/certifications.png)
+
+### 📌 Contact Section
+
+_Professional contact form for easy communication._  
+![Contact](./screenshots/contact.png)
+
+---
+
+## 🎯 Key Projects Featured
+
+- **GPA Calculator** - Academic grade management system
+- **Coffee Shop Website** - E-commerce platform
+
+---
+
+## 🚀 Future Enhancements
+
+- 📝 **Blog Section** - Technical articles and insights
+- 🌐 **Multi-language Support** - International accessibility
+- 📱 **PWA Features** - Progressive Web App capabilities
+- 🌙 **Dark/Light Mode** - Theme customization
+- 📊 **Analytics Integration** - Visitor insights
+- 🔍 **SEO Optimization** - Better search engine visibility
+
+---
+
+## 📬 Contact & Connect
+
+- 📧 **Email:** [devisarunadevidd@gmail.com](mailto:devisarunadevidd@gmail.com)
+- 🔗 **GitHub:** [https://github.com/devisarunadevid](https://github.com/devisarunadevid)
+
+---
+
+✨ _Built with ❤️ by Devis Aruna Devi D_  
+🎓 _Computer Science Student | Full Stack Developer_
