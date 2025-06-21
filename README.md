@@ -7,7 +7,7 @@ This website showcases my skills, projects, certifications, and achievements in 
 
 ---
 
-🌐 **Live Website:** [https://your-deployed-link.vercel.app](https://your-deployed-link.vercel.app)
+🌐 **Live Website:** [https://your-deployed-link.vercel.app](https://portfolio-wheat-three-19.vercel.app/)
 
 ---
 
