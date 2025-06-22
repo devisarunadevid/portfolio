@@ -45,8 +45,8 @@ export default function Projects() {
         "PDF export functionality",
         "Data persistence with MongoDB",
       ],
-      githubLink: "https://github.com/devisarunadevid/gpa-cgpa-calculator",
-      liveLink: "https://gpa-cgpa-calculator-orcin.vercel.app",
+      githubLink: "https://github.com/devisarunadevid/gpa-cgpa-app",
+      liveLink: "gpa-cgpa-app.vercel.app",
       imageAlt: "GPA Calculator Preview",
     },
   ];
@@ -84,7 +84,7 @@ export default function Projects() {
       className="px-6 py-12 scroll-mt-40"
       data-aos="fade-up"
     >
-      <div className="mx-auto max-w-6xl">
+      <div className="max-w-6xl mx-auto">
         <h2 className="mb-12 text-3xl font-semibold text-center text-gray-800 md:text-4xl">
           Featured Projects
         </h2>
@@ -93,10 +93,10 @@ export default function Projects() {
           {projects.map((project, projectIndex) => (
             <div
               key={projectIndex}
-              className="overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:transform hover:scale-105"
+              className="overflow-hidden transition-all duration-300 rounded-lg shadow-lg hover:transform hover:scale-105"
             >
               {/* Project Image Slider */}
-              <div className="overflow-hidden relative h-48 group">
+              <div className="relative h-48 overflow-hidden group">
                 <img
                   src={project.images[currentImageIndices[projectIndex]]}
                   alt={`${project.imageAlt} - Image ${
@@ -112,21 +112,21 @@ export default function Projects() {
                 {/* Navigation Buttons */}
                 <button
                   onClick={() => prevImage(projectIndex)}
-                  className="absolute left-2 top-1/2 z-10 p-2 text-pink-500 rounded-full transition-all duration-300 -translate-y-1/2 bg-white/90 hover:bg-white"
+                  className="absolute z-10 p-2 text-pink-500 transition-all duration-300 -translate-y-1/2 rounded-full left-2 top-1/2 bg-white/90 hover:bg-white"
                   aria-label="Previous image"
                 >
                   <FaChevronLeft size={20} />
                 </button>
                 <button
                   onClick={() => nextImage(projectIndex)}
-                  className="absolute right-2 top-1/2 z-10 p-2 text-pink-500 rounded-full transition-all duration-300 -translate-y-1/2 bg-white/90 hover:bg-white"
+                  className="absolute z-10 p-2 text-pink-500 transition-all duration-300 -translate-y-1/2 rounded-full right-2 top-1/2 bg-white/90 hover:bg-white"
                   aria-label="Next image"
                 >
                   <FaChevronRight size={20} />
                 </button>
 
                 {/* Image Counter */}
-                <div className="absolute right-2 bottom-2 z-10 px-3 py-1 text-sm text-white rounded-full bg-black/70">
+                <div className="absolute z-10 px-3 py-1 text-sm text-white rounded-full right-2 bottom-2 bg-black/70">
                   {currentImageIndices[projectIndex] + 1} /{" "}
                   {project.images.length}
                 </div>
@@ -180,7 +180,7 @@ export default function Projects() {
                     href={project.githubLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center px-4 py-2 space-x-2 text-purple-800 bg-white rounded-lg transition-colors duration-300 hover:bg-pink-100"
+                    className="flex items-center px-4 py-2 space-x-2 text-purple-800 transition-colors duration-300 bg-white rounded-lg hover:bg-pink-100"
                   >
                     <FaGithub />
                     <span>GitHub</span>
@@ -189,7 +189,7 @@ export default function Projects() {
                     href={project.liveLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center px-4 py-2 space-x-2 text-purple-800 bg-white rounded-lg transition-colors duration-300 hover:bg-pink-100"
+                    className="flex items-center px-4 py-2 space-x-2 text-purple-800 transition-colors duration-300 bg-white rounded-lg hover:bg-pink-100"
                   >
                     <FaExternalLinkAlt />
                     <span>Live Demo</span>
@@ -212,7 +212,7 @@ export default function Projects() {
             href="https://github.com/devisarunadevid"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-6 py-3 space-x-2 text-lg font-semibold text-purple-800 bg-white rounded-lg transition-all duration-300 hover:bg-pink-100"
+            className="inline-flex items-center px-6 py-3 space-x-2 text-lg font-semibold text-purple-800 transition-all duration-300 bg-white rounded-lg hover:bg-pink-100"
           >
             <FaGithub />
             <span>View GitHub Profile</span>
