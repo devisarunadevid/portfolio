@@ -1,5 +1,10 @@
 import React, { useState } from "react";
+import emailjs from "@emailjs/browser";
 import { FaEnvelope, FaPhone, FaLinkedin, FaGithub } from "react-icons/fa";
+
+const EMAILJS_SERVICE_ID = "service_tyi3zev";
+const EMAILJS_TEMPLATE_ID = "template_rbmv96m";
+const EMAILJS_PUBLIC_KEY = "7a0DhS7E4ClIcZHiW";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -15,49 +20,94 @@ export default function Contact() {
 
   const validateForm = () => {
     const newErrors = {};
-    if (!formData.name.trim()) newErrors.name = "Name is required";
-    if (!formData.email.trim()) newErrors.email = "Email is required";
-    else if (!/\S+@\S+\.\S+/.test(formData.email))
-      newErrors.email = "Email is invalid";
-    if (!formData.subject.trim()) newErrors.subject = "Subject is required";
-    if (!formData.message.trim()) newErrors.message = "Message is required";
-    else if (formData.message.length < 10)
+
+    if (!formData.name.trim()) {
+      newErrors.name = "Name is required";
+    }
+
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email.trim())) {
+      newErrors.email = "Please enter a valid email address";
+    }
+
+    if (!formData.subject.trim()) {
+      newErrors.subject = "Subject is required";
+    }
+
+    if (!formData.message.trim()) {
+      newErrors.message = "Message is required";
+    } else if (formData.message.trim().length < 10) {
       newErrors.message = "Message must be at least 10 characters";
+    }
+
     return newErrors;
   };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+
     setFormData((prev) => ({
       ...prev,
       [name]: value,
     }));
+
     if (errors[name]) {
       setErrors((prev) => ({
         ...prev,
         [name]: "",
       }));
     }
+
+    if (submitStatus) {
+      setSubmitStatus(null);
+    }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (isSubmitting) return;
+
     const newErrors = validateForm();
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
+      setSubmitStatus(null);
       return;
     }
 
+    setErrors({});
     setIsSubmitting(true);
     setSubmitStatus(null);
 
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1000)); // Simulate sending
+      const templateParams = {
+        name: formData.name.trim(),
+        email: formData.email.trim(),
+        subject: formData.subject.trim(),
+        title: formData.subject.trim(),
+        message: formData.message.trim(),
+        time: new Date().toLocaleString(),
+      };
+
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        templateParams,
+        EMAILJS_PUBLIC_KEY,
+      );
+
       setSubmitStatus("success");
-      setFormData({ name: "", email: "", subject: "", message: "" });
-    } catch (_error) {
-      console.error(_error);
+
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("EmailJS submission failed:", error);
       setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);
@@ -65,16 +115,8 @@ export default function Contact() {
   };
 
   return (
-    <section
-      id="contact"
-      className="px-6 py-12 scroll-mt-40"
-      data-aos="fade-up"
-    >
+    <section id="contact" className="px-4 py-4">
       <div className="max-w-6xl mx-auto">
-        <h2 className="mb-12 text-3xl font-semibold text-center text-gray-800 md:text-4xl">
-          Get In Touch
-        </h2>
-
         <div className="grid gap-8 md:grid-cols-2">
           {/* Contact Information */}
           <div className="flex flex-col justify-center p-8 rounded-lg shadow-lg">
@@ -83,30 +125,33 @@ export default function Contact() {
             </h3>
 
             <div className="space-y-6 text-lg">
+              {/* Email */}
               <div className="flex items-center space-x-3">
-                <FaEnvelope className="text-xl text-purple-700" />
+                <FaEnvelope className="text-xl text-purple-700 shrink-0" />
                 <a
                   href="mailto:devisarunadevidd@gmail.com"
-                  className="text-gray-700 transition-colors hover:text-pink-600"
+                  className="text-gray-700 break-all transition-colors hover:text-pink-600"
                 >
                   devisarunadevidd@gmail.com
                 </a>
               </div>
 
+              {/* Phone */}
               <div className="flex items-center space-x-3">
-                <FaPhone className="text-xl text-purple-700" />
+                <FaPhone className="text-xl text-purple-700 shrink-0" />
                 <a
-                  href="tel:8610202336"
+                  href="tel:+918610202336"
                   className="text-gray-700 transition-colors hover:text-pink-600"
                 >
-                  8610202336
+                  +91 86102 02336
                 </a>
               </div>
 
+              {/* LinkedIn */}
               <div className="flex items-center space-x-3">
-                <FaLinkedin className="text-xl text-purple-700" />
+                <FaLinkedin className="text-xl text-purple-700 shrink-0" />
                 <a
-                  href="https://www.linkedin.com/in/devis-aruna-devi-d"
+                  href="https://www.linkedin.com/in/devis-aruna-devi-d/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-700 transition-colors hover:text-pink-600"
@@ -115,10 +160,11 @@ export default function Contact() {
                 </a>
               </div>
 
+              {/* GitHub */}
               <div className="flex items-center space-x-3">
-                <FaGithub className="text-xl text-purple-700" />
+                <FaGithub className="text-xl text-purple-700 shrink-0" />
                 <a
-                  href="https://github.com/itzmearuna"
+                  href="https://github.com/devisarunadevid"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-700 transition-colors hover:text-pink-600"
@@ -132,8 +178,10 @@ export default function Contact() {
           {/* Contact Form */}
           <form
             onSubmit={handleSubmit}
+            noValidate
             className="p-8 space-y-6 rounded-lg shadow-lg"
           >
+            {/* Full Name */}
             <div>
               <label
                 htmlFor="name"
@@ -141,6 +189,7 @@ export default function Contact() {
               >
                 Full Name
               </label>
+
               <input
                 type="text"
                 id="name"
@@ -148,15 +197,22 @@ export default function Contact() {
                 value={formData.name}
                 onChange={handleChange}
                 placeholder="e.g., Jane Doe"
+                autoComplete="name"
+                aria-invalid={Boolean(errors.name)}
+                aria-describedby={errors.name ? "name-error" : undefined}
                 className={`w-full px-4 py-3 rounded-lg bg-white/10 border ${
                   errors.name ? "border-red-500" : "border-pink-500"
                 } focus:outline-none focus:ring-2 focus:ring-pink-500 text-gray-800`}
               />
+
               {errors.name && (
-                <p className="mt-1 text-sm text-red-500">{errors.name}</p>
+                <p id="name-error" className="mt-1 text-sm text-red-500">
+                  {errors.name}
+                </p>
               )}
             </div>
 
+            {/* Email Address */}
             <div>
               <label
                 htmlFor="email"
@@ -164,6 +220,7 @@ export default function Contact() {
               >
                 Email Address
               </label>
+
               <input
                 type="email"
                 id="email"
@@ -171,15 +228,22 @@ export default function Contact() {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="e.g., jane.doe@email.com"
+                autoComplete="email"
+                aria-invalid={Boolean(errors.email)}
+                aria-describedby={errors.email ? "email-error" : undefined}
                 className={`w-full px-4 py-3 rounded-lg bg-white/10 border ${
                   errors.email ? "border-red-500" : "border-pink-500"
                 } focus:outline-none focus:ring-2 focus:ring-pink-500 text-gray-800`}
               />
+
               {errors.email && (
-                <p className="mt-1 text-sm text-red-500">{errors.email}</p>
+                <p id="email-error" className="mt-1 text-sm text-red-500">
+                  {errors.email}
+                </p>
               )}
             </div>
 
+            {/* Subject */}
             <div>
               <label
                 htmlFor="subject"
@@ -187,6 +251,7 @@ export default function Contact() {
               >
                 Subject
               </label>
+
               <input
                 type="text"
                 id="subject"
@@ -194,15 +259,21 @@ export default function Contact() {
                 value={formData.subject}
                 onChange={handleChange}
                 placeholder="e.g., Collaboration Opportunity"
+                aria-invalid={Boolean(errors.subject)}
+                aria-describedby={errors.subject ? "subject-error" : undefined}
                 className={`w-full px-4 py-3 rounded-lg bg-white/10 border ${
                   errors.subject ? "border-red-500" : "border-pink-500"
                 } focus:outline-none focus:ring-2 focus:ring-pink-500 text-gray-800`}
               />
+
               {errors.subject && (
-                <p className="mt-1 text-sm text-red-500">{errors.subject}</p>
+                <p id="subject-error" className="mt-1 text-sm text-red-500">
+                  {errors.subject}
+                </p>
               )}
             </div>
 
+            {/* Message */}
             <div>
               <label
                 htmlFor="message"
@@ -210,22 +281,29 @@ export default function Contact() {
               >
                 Message
               </label>
+
               <textarea
                 id="message"
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
                 placeholder="Write your message here..."
-                rows="5"
+                rows={5}
+                aria-invalid={Boolean(errors.message)}
+                aria-describedby={errors.message ? "message-error" : undefined}
                 className={`w-full px-4 py-3 rounded-lg bg-white/10 border ${
                   errors.message ? "border-red-500" : "border-pink-500"
                 } focus:outline-none focus:ring-2 focus:ring-pink-500 text-gray-800`}
-              ></textarea>
+              />
+
               {errors.message && (
-                <p className="mt-1 text-sm text-red-500">{errors.message}</p>
+                <p id="message-error" className="mt-1 text-sm text-red-500">
+                  {errors.message}
+                </p>
               )}
             </div>
 
+            {/* Submit Button */}
             <button
               type="submit"
               disabled={isSubmitting}
@@ -238,14 +316,16 @@ export default function Contact() {
               {isSubmitting ? "Sending..." : "Send Message"}
             </button>
 
+            {/* Submission Status */}
             {submitStatus === "success" && (
-              <p className="mt-4 text-center text-green-400">
-                Your message has been sent. Thank you!
+              <p role="status" className="mt-4 text-center text-green-600">
+                Your message has been sent successfully. Thank you!
               </p>
             )}
+
             {submitStatus === "error" && (
-              <p className="mt-4 text-center text-red-400">
-                Oops! Something went wrong. Please try again later.
+              <p role="alert" className="mt-4 text-center text-red-500">
+                We couldn't send your message. Please try again later.
               </p>
             )}
           </form>

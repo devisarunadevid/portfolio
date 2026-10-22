@@ -2,34 +2,63 @@ import React from "react";
 import { ReactTyped } from "react-typed";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
-import { Link } from "react-scroll";
 import Bubble from "./Bubble";
 
 export default function Hero({ openModal }) {
   const bubbles = [
-    { size: "60px", delay: "0s", duration: 8, color: "#B68BC2", opacity: 0.2 },
+    {
+      size: "60px",
+      delay: "0s",
+      duration: 8,
+      color: "#B68BC2",
+      opacity: 0.2,
+      left: "8%",
+      top: "18%",
+    },
     {
       size: "120px",
       delay: "1.5s",
       duration: 10,
       color: "#F3A7D6",
       opacity: 0.15,
+      left: "78%",
+      top: "12%",
     },
-    { size: "90px", delay: "3s", duration: 7, color: "#B68BC2", opacity: 0.25 },
+    {
+      size: "90px",
+      delay: "3s",
+      duration: 7,
+      color: "#B68BC2",
+      opacity: 0.25,
+      left: "18%",
+      top: "68%",
+    },
     {
       size: "180px",
       delay: "4.5s",
       duration: 12,
       color: "#F3A7D6",
       opacity: 0.1,
+      left: "62%",
+      top: "58%",
     },
-    { size: "70px", delay: "6s", duration: 9, color: "#B68BC2", opacity: 0.3 },
+    {
+      size: "70px",
+      delay: "6s",
+      duration: 9,
+      color: "#B68BC2",
+      opacity: 0.3,
+      left: "88%",
+      top: "42%",
+    },
     {
       size: "100px",
       delay: "7.5s",
       duration: 11,
       color: "#F3A7D6",
       opacity: 0.2,
+      left: "42%",
+      top: "8%",
     },
     {
       size: "140px",
@@ -37,6 +66,8 @@ export default function Hero({ openModal }) {
       duration: 8,
       color: "#B68BC2",
       opacity: 0.18,
+      left: "4%",
+      top: "42%",
     },
   ];
 
@@ -66,7 +97,7 @@ export default function Hero({ openModal }) {
   return (
     <section
       id="home"
-      className="flex overflow-hidden relative flex-col justify-center items-center min-h-screen scroll-mt-40"
+      className="relative flex flex-col items-center justify-center min-h-screen overflow-hidden scroll-mt-40"
       data-aos="fade-up"
     >
       {/* Animated Bubbles */}
@@ -76,9 +107,7 @@ export default function Hero({ openModal }) {
 
       <div className="relative z-10 px-4 text-center">
         {/* Greeting */}
-        <p className="mb-4 text-lg text-purple-700 md:text-xl animate-fade-in">
-          Hi, I'm
-        </p>
+        <p className="mb-4 text-lg text-purple-700 md:text-xl">Hi, I'm</p>
 
         {/* Name */}
         <h1 className="mb-4 text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500 md:text-6xl">
@@ -89,9 +118,9 @@ export default function Hero({ openModal }) {
         <h2 className="mb-8 text-xl md:text-2xl">
           <ReactTyped
             strings={[
-              "Full-stack Developer",
-              "MERN Stack Developer",
-              "UI/UX Enthusiast",
+              "Full-Stack Developer",
+              "React & Java Developer",
+              "AI Application Developer",
             ]}
             typeSpeed={40}
             backSpeed={50}
@@ -101,23 +130,24 @@ export default function Hero({ openModal }) {
         </h2>
 
         {/* Description */}
-        <p className="mx-auto mb-8 max-w-2xl text-lg text-gray-700">
-          A passionate developer focused on creating beautiful and functional
-          web applications. Currently pursuing B.E in Computer Science and
-          exploring new technologies.
+        <p className="max-w-2xl mx-auto mb-8 text-lg text-gray-700">
+          A Computer Science Engineering student passionate about building
+          responsive web applications and practical software solutions.
+          Experienced with React, Java, Spring, SQL, and API integration, with
+          an interest in Generative AI and intelligent applications.
         </p>
 
         {/* CTA Buttons */}
-        <div className="flex flex-wrap gap-4 justify-center mb-12">
+        <div className="flex flex-wrap justify-center gap-4 mb-12">
           <button
             onClick={() => openModal("projects")}
-            className="px-8 py-3 font-semibold text-purple-800 bg-white rounded-lg transition-all duration-300 transform cursor-pointer hover:bg-pink-100 hover:scale-105"
+            className="px-8 py-3 font-semibold text-purple-800 transition-all duration-300 transform bg-white rounded-lg cursor-pointer hover:bg-pink-100 hover:scale-105"
           >
             View Projects
           </button>
           <button
             onClick={() => openModal("contact")}
-            className="px-8 py-3 font-semibold text-purple-800 bg-white rounded-lg transition-all duration-300 transform cursor-pointer hover:bg-pink-100 hover:scale-105"
+            className="px-8 py-3 font-semibold text-purple-800 transition-all duration-300 transform bg-white rounded-lg cursor-pointer hover:bg-pink-100 hover:scale-105"
           >
             Contact Me
           </button>

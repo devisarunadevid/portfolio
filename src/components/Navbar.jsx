@@ -1,13 +1,18 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-scroll";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 export default function Navbar({ openModal }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
-  // const navOffset = -100; // Removed, using scroll-margin-top on sections
 
-  const navLinks = ["about", "skills", "projects", "certifications", "contact"];
+  const navLinks = [
+    "about",
+    "education",
+    "skills",
+    "projects",
+    "certifications",
+    "contact",
+  ];
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -35,13 +40,12 @@ export default function Navbar({ openModal }) {
         isSticky ? "bg-white shadow-xl" : "bg-transparent"
       }`}
     >
-      <div className="flex justify-between items-center p-4 mx-auto max-w-6xl">
-        <h1 className="mr-16 text-xl font-bold text-gray-800 whitespace-nowrap">
+      <div className="flex items-center justify-between gap-4 p-4 mx-auto max-w-6xl">
+        <h1 className="text-lg font-bold text-gray-800 whitespace-nowrap md:text-xl">
           Devis Aruna Devi D
         </h1>
 
-        {/* Desktop Navigation */}
-        <div className="hidden space-x-6 lg:flex">
+        <div className="hidden lg:flex flex-wrap items-center justify-end gap-x-5">
           {navLinks.map((link) => (
             <button
               key={link}
@@ -56,7 +60,6 @@ export default function Navbar({ openModal }) {
           ))}
         </div>
 
-        {/* Mobile Menu Button */}
         <div className="lg:hidden">
           <button
             onClick={toggleMenu}
@@ -67,7 +70,6 @@ export default function Navbar({ openModal }) {
         </div>
       </div>
 
-      {/* Mobile Navigation */}
       <div
         className={`lg:hidden bg-white w-full transition-all duration-300 ease-in-out transform ${
           isOpen

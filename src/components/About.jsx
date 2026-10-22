@@ -12,35 +12,31 @@ export default function About() {
       icon: <FaCode className="text-3xl text-pink-600" />,
       title: "Full Stack Development",
       description:
-        "Passionate about building end-to-end solutions using modern web technologies.",
+        "Building end-to-end web applications with responsive interfaces, backend services, and database integration.",
     },
     {
       icon: <FaLaptopCode className="text-3xl text-pink-600" />,
       title: "Problem Solving",
       description:
-        "Enjoy tackling complex problems and finding efficient solutions.",
+        "Strengthening programming and algorithmic thinking by solving coding challenges and practicing DSA.",
     },
     {
       icon: <FaGraduationCap className="text-3xl text-pink-600" />,
       title: "Continuous Learning",
       description:
-        "Always eager to learn new technologies and improve my skills.",
+        "Continuously improving my technical skills through hands-on projects and exploring new technologies.",
     },
     {
       icon: <FaLightbulb className="text-3xl text-pink-600" />,
-      title: "Innovation",
+      title: "AI Integration",
       description:
-        "Focused on creating innovative solutions that make a difference.",
+        "Exploring practical AI applications by integrating AI APIs and intelligent features into web applications.",
     },
   ];
 
   return (
-    <section id="about" className="px-6 py-12 scroll-mt-40" data-aos="fade-up">
+    <section id="about" className="px-4 py-4">
       <div className="max-w-6xl mx-auto">
-        <h2 className="mb-12 text-3xl font-semibold text-center text-gray-800 md:text-4xl">
-          About Me
-        </h2>
-
         {/* Photo and Introduction Section */}
         <div className="grid items-center gap-8 mb-12 md:grid-cols-3">
           {/* Professional Photo */}
@@ -50,10 +46,6 @@ export default function About() {
                 src="/profile-photo.png"
                 alt="Devis Aruna Devi D"
                 className="object-cover w-full h-full"
-                onError={(e) => {
-                  e.target.src =
-                    "https://via.placeholder.com/400x400?text=Devis+Aruna+Devi+D";
-                }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-pink-300/20 to-transparent"></div>
             </div>
@@ -62,16 +54,20 @@ export default function About() {
           {/* Introduction Text */}
           <div className="space-y-4 md:col-span-2">
             <p className="text-lg leading-relaxed text-gray-700">
-              I'm a passionate computer science student with a strong interest
-              in full-stack development. Currently pursuing my B.E in Computer
-              Science at Velammal College of Engineering and Technology, I'm in
-              my 3rd year of study.
+              I'm a B.E. Computer Science and Engineering student at Velammal
+              College of Engineering and Technology, currently in my 7th
+              semester, with a strong interest in full-stack development and
+              building practical software solutions.
             </p>
+
             <p className="text-lg leading-relaxed text-gray-700">
-              My journey in web development started with a curiosity about how
-              websites work, which led me to dive deep into both frontend and
-              backend technologies. I enjoy creating responsive, user-friendly
-              applications that solve real-world problems.
+              I enjoy developing web applications that combine intuitive user
+              interfaces, reliable backend services, and database management.
+              Through projects such as Librario, I've explored full-stack
+              development, AI integration, payment processing, and email
+              notifications. I'm continuously strengthening my Java, SQL,
+              problem-solving, and software development skills as I prepare for
+              software engineering opportunities.
             </p>
           </div>
         </div>
@@ -82,30 +78,41 @@ export default function About() {
             <h3 className="mb-4 text-xl font-semibold text-gray-800">
               At a Glance
             </h3>
+
             <ul className="space-y-3">
-              <li className="flex items-center space-x-2">
+              <li className="flex items-start gap-2">
                 <span className="text-pink-600">•</span>
-                <span>3rd Year B.E Computer Science Student</span>
+                <span>
+                  7th Semester B.E. Computer Science and Engineering Student
+                </span>
               </li>
-              <li className="flex items-center space-x-2">
+
+              <li className="flex items-start gap-2">
                 <span className="text-pink-600">•</span>
-                <span>MERN Stack Developer</span>
+                <span>
+                  Full-Stack Development with React.js, Java, Spring Boot and
+                  SQL
+                </span>
               </li>
-              <li className="flex items-center space-x-2">
+
+              <li className="flex items-start gap-2">
+                <span className="text-pink-600">•</span>
+                <span>
+                  Full-Stack Development Intern at Infosys Springboard
+                </span>
+              </li>
+
+              <li className="flex items-start gap-2">
                 <span className="text-pink-600">•</span>
                 <span>
                   Presented research on "Integration of Artificial Intelligence
-                  In Crisis Communication" at 'LILAC'24' International
-                  Conference
+                  in Crisis Communication" at LILAC'24 International Conference
                 </span>
               </li>
-              <li className="flex items-center space-x-2">
+
+              <li className="flex items-start gap-2">
                 <span className="text-pink-600">•</span>
-                <span>Passionate about Web Development</span>
-              </li>
-              <li className="flex items-center space-x-2">
-                <span className="text-pink-600">•</span>
-                <span>Always Learning New Technologies</span>
+                <span>Hackathon Second Prize Winner</span>
               </li>
             </ul>
           </div>
@@ -120,8 +127,8 @@ export default function About() {
               skills.
             </p>
             <a
-              href="/Devis_Aruna_Devi_Fullstack_Resume.pdf"
-              download="Devis_Aruna_Devi_Resume.pdf"
+              href="/Devis_Aruna_Devi_D_Full_Stack_AI_Resume.pdf"
+              download="Devis_Aruna_Devi_D_Full_Stack_AI_Resume.pdf"
               className="inline-block px-6 py-3 font-semibold text-purple-600 transition-all duration-300 bg-white rounded-lg hover:bg-pink-100"
             >
               Download Resume

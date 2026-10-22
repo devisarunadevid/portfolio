@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Projects from "./components/Projects";
@@ -26,9 +26,9 @@ function App() {
     setActiveModal(section);
   };
 
-  const closeModal = () => {
+  const closeModal = useCallback(() => {
     setActiveModal(null);
-  };
+  }, []);
 
   const renderModalContent = () => {
     switch (activeModal) {
@@ -56,13 +56,13 @@ function App() {
       case "projects":
         return "Featured Projects";
       case "skills":
-        return "My Skills";
+        return "Technical Skills";
       case "education":
-        return "My Education";
+        return "Education";
       case "certifications":
-        return "My Certifications";
+        return "Certifications";
       case "contact":
-        return "Contact Me";
+        return "Get In Touch";
       default:
         return "";
     }
@@ -73,7 +73,6 @@ function App() {
       <Navbar openModal={openModal} />
       <main>
         <Hero openModal={openModal} />
-        {/* These sections will now be displayed in modals */}
       </main>
       <Footer />
 

@@ -4,53 +4,46 @@ import { FaGraduationCap, FaSchool } from "react-icons/fa";
 export default function Education() {
   const educationData = [
     {
-      year: "Present (2022 - 2026)",
-      title: "B.E Computer Science",
+      year: "2023 – 2027 (Present)",
+      title: "B.E. Computer Science and Engineering",
       institution: "Velammal College of Engineering and Technology, Madurai",
-      icon: <FaGraduationCap className="text-pink-600" />,
+      icon: <FaGraduationCap className="text-white" size={12} />,
       details: [
-        "Currently in my 3rd year of study, focusing on full-stack development.",
-        "Relevant Coursework: Data Structures & Algorithms, Object-Oriented Programming, Web Technologies.",
+        "Currently in 7th semester, focusing on full-stack development.",
+        "Relevant coursework: Data Structures & Algorithms, Object-Oriented Programming, Web Technologies.",
         "Actively participating in coding contests and tech workshops.",
       ],
     },
     {
-      year: "2022",
+      year: "2023",
       title: "Class XII (Higher Secondary)",
-      institution: "CEOA.Mat.Hr.Sec.School, Madurai",
-      icon: <FaSchool className="text-pink-600" />,
+      institution: "CEOA Matriculation Higher Secondary School, Madurai",
+      icon: <FaSchool className="text-white" size={12} />,
       details: [
         "Completed with an aggregate percentage of 90%.",
         "Specialized in Biology and Mathematics group.",
       ],
     },
     {
-      year: "2020",
+      year: "2021",
       title: "Class X (Secondary School)",
-      institution: "CEOA.Mat.Hr.Sec.School, Madurai",
-      icon: <FaSchool className="text-pink-600" />,
-      details: ["Achieved a commendable score of 95%."],
+      institution: "CEOA Matriculation Higher Secondary School, Madurai",
+      icon: <FaSchool className="text-white" size={12} />,
+      details: ["Declared pass under the COVID-19 pandemic assessment policy."],
     },
   ];
 
   return (
-    <section
-      id="education"
-      className="px-6 py-12 scroll-mt-40"
-      data-aos="fade-up"
-    >
-      <div className="max-w-4xl mx-auto">
-        <h2 className="mb-12 text-3xl font-semibold text-center text-gray-800 md:text-4xl">
-          My Education
-        </h2>
+    <section id="education" className="px-4 py-4">
+      <div className="mx-auto max-w-4xl">
         <div className="relative ml-4 border-l-4 border-pink-500 md:ml-20">
           {educationData.map((item, index) => (
             <div
               key={index}
-              className="relative flex items-start w-full pl-10 mb-12 last:mb-0"
+              className="flex relative items-start pl-10 mb-12 w-full last:mb-0"
             >
               {/* Timeline Dot */}
-              <div className="absolute top-0 z-10 flex items-center justify-center w-6 h-6 mt-1 bg-pink-500 border-2 border-white rounded-full shadow-md -left-3">
+              <div className="flex absolute top-0 -left-3 z-10 justify-center items-center mt-1 w-6 h-6 bg-pink-500 rounded-full border-2 border-white shadow-md">
                 {item.icon}
               </div>
 
@@ -65,7 +58,7 @@ export default function Education() {
                 <p className="mb-3 font-medium text-gray-700 text-md">
                   {item.institution}
                 </p>
-                <ul className="space-y-1 text-gray-700 list-disc list-inside">
+                <ul className="space-y-1 list-disc list-inside text-gray-700">
                   {item.details.map((detail, detailIndex) => (
                     <li key={detailIndex}>{detail}</li>
                   ))}

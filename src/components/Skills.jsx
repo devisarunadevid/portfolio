@@ -8,17 +8,51 @@ import {
   FaReact,
   FaJava,
   FaNodeJs,
+  FaCode,
+  FaDatabase,
+  FaBug,
+  FaUsers,
+  FaLaptopCode,
+  FaVial,
 } from "react-icons/fa";
+
 import {
   SiMongodb,
   SiExpress,
   SiTailwindcss,
   SiFigma,
   SiC,
+  SiSpring,
+  SiMysql,
+  SiPython,
+  SiPhp,
+  SiPostman,
+  SiJunit5,
+  SiOpenai,
 } from "react-icons/si";
 
 export default function Skills() {
   const skillCategories = [
+    {
+      title: "Programming Languages",
+      skills: [
+        { name: "Java", icon: <FaJava className="text-red-500" size={40} /> },
+        { name: "C", icon: <SiC className="text-indigo-700" size={40} /> },
+        {
+          name: "Python",
+          icon: <SiPython className="text-blue-500" size={40} />,
+        },
+        {
+          name: "JavaScript",
+          icon: <FaJs className="text-yellow-400" size={40} />,
+        },
+        {
+          name: "SQL",
+          icon: <FaDatabase className="text-blue-500" size={40} />,
+        },
+        { name: "PHP", icon: <SiPhp className="text-indigo-500" size={40} /> },
+      ],
+    },
     {
       title: "Frontend Development",
       skills: [
@@ -29,10 +63,6 @@ export default function Skills() {
         {
           name: "CSS3",
           icon: <FaCss3Alt className="text-blue-500" size={40} />,
-        },
-        {
-          name: "JavaScript",
-          icon: <FaJs className="text-yellow-400" size={40} />,
         },
         {
           name: "React.js",
@@ -52,14 +82,6 @@ export default function Skills() {
       title: "Backend Development",
       skills: [
         {
-          name: "C",
-          icon: (
-            <div className="flex items-center justify-center w-12 h-12 bg-indigo-800 hexagon">
-              <SiC className="text-white" size={30} />
-            </div>
-          ),
-        },
-        {
           name: "Node.js",
           icon: <FaNodeJs className="text-green-500" size={40} />,
         },
@@ -68,17 +90,59 @@ export default function Skills() {
           icon: <SiExpress className="text-gray-700" size={40} />,
         },
         {
-          name: "MongoDB",
-          icon: <SiMongodb className="text-green-600" size={40} />,
+          name: "Spring Boot",
+          icon: <SiSpring className="text-green-600" size={40} />,
         },
         {
-          name: "Java",
-          icon: <FaJava className="text-red-500" size={40} />,
+          name: "Spring Security",
+          icon: <SiSpring className="text-green-700" size={40} />,
+        },
+        {
+          name: "Hibernate/JPA",
+          icon: <FaDatabase className="text-orange-500" size={40} />,
+        },
+        {
+          name: "REST APIs",
+          icon: <FaCode className="text-purple-500" size={40} />,
         },
       ],
     },
     {
-      title: "Tools & Others",
+      title: "Databases",
+      skills: [
+        {
+          name: "MySQL",
+          icon: <SiMysql className="text-blue-600" size={40} />,
+        },
+        {
+          name: "MongoDB",
+          icon: <SiMongodb className="text-green-600" size={40} />,
+        },
+      ],
+    },
+    {
+      title: "AI & Generative AI",
+      skills: [
+        {
+          name: "Gemini API",
+          icon: <FaCode className="text-blue-500" size={40} />,
+        },
+        {
+          name: "Generative AI",
+          icon: <FaLaptopCode className="text-purple-500" size={40} />,
+        },
+        {
+          name: "Prompt Engineering",
+          icon: <FaCode className="text-pink-600" size={40} />,
+        },
+        {
+          name: "RAG Fundamentals",
+          icon: <FaDatabase className="text-indigo-500" size={40} />,
+        },
+      ],
+    },
+    {
+      title: "Tools & Development Practices",
       skills: [
         {
           name: "Git",
@@ -86,37 +150,77 @@ export default function Skills() {
         },
         {
           name: "GitHub",
-          icon: <FaGithub className="text-black" size={40} />,
+          icon: <FaGithub className="text-gray-800" size={40} />,
+        },
+        {
+          name: "Postman",
+          icon: <SiPostman className="text-orange-500" size={40} />,
+        },
+        {
+          name: "VS Code",
+          icon: <FaCode className="text-blue-500" size={40} />,
+        },
+        {
+          name: "JUnit",
+          icon: <SiJunit5 className="text-green-700" size={40} />,
+        },
+        {
+          name: "Software Testing",
+          icon: <FaBug className="text-pink-600" size={40} />,
+        },
+        {
+          name: "Debugging",
+          icon: <FaCode className="text-indigo-500" size={40} />,
+        },
+        {
+          name: "API Testing",
+          icon: <FaVial className="text-purple-500" size={40} />,
+        },
+        {
+          name: "Team Collaboration",
+          icon: <FaUsers className="text-purple-500" size={40} />,
         },
       ],
     },
   ];
 
-  return (
-    <section id="skills" className="px-6 py-12 scroll-mt-40" data-aos="fade-up">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="mb-12 text-3xl font-semibold text-center text-gray-800 md:text-4xl">
-          Technical Skills
-        </h2>
+  const additionalSkills = [
+    "Object-Oriented Programming",
+    "Data Structures and Algorithms",
+    "Database Management Systems",
+    "Input Validation",
+    "Error Handling",
+    "Responsive Web Design",
+    "Problem Solving",
+    "Code Documentation",
+    "Version Control",
+  ];
 
-        <div className="space-y-12">
-          {skillCategories.map((category, categoryIndex) => (
-            <div key={categoryIndex} className="p-6 rounded-lg shadow-lg">
-              <h3 className="mb-6 text-2xl font-semibold text-center text-gray-800">
+  return (
+    <section id="skills" className="px-4 py-4">
+      <div className="mx-auto max-w-6xl">
+        <p className="mx-auto mb-10 max-w-3xl text-center text-gray-600">
+          Technologies and tools I use to build web applications, integrate
+          APIs, manage databases, and develop software solutions.
+        </p>
+
+        <div className="space-y-10">
+          {skillCategories.map((category) => (
+            <div key={category.title} className="p-6 rounded-lg shadow-lg">
+              <h3 className="mb-6 text-xl font-semibold text-center text-gray-800 md:text-2xl">
                 {category.title}
               </h3>
-              <div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4">
-                {category.skills.map((skill, skillIndex) => (
+
+              <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+                {category.skills.map((skill) => (
                   <div
-                    key={skillIndex}
-                    className="p-4 transition-all duration-300 rounded-lg shadow-lg hover:transform hover:scale-105"
+                    key={skill.name}
+                    className="flex flex-col gap-3 justify-center items-center p-4 text-center rounded-lg shadow-md transition-transform duration-300 hover:scale-105"
                   >
-                    <div className="flex flex-col items-center">
-                      <div className="mb-3">{skill.icon}</div>
-                      <h4 className="text-lg font-semibold text-gray-800">
-                        {skill.name}
-                      </h4>
-                    </div>
+                    <div>{skill.icon}</div>
+                    <h4 className="text-sm font-semibold text-gray-800 sm:text-base">
+                      {skill.name}
+                    </h4>
                   </div>
                 ))}
               </div>
@@ -124,27 +228,19 @@ export default function Skills() {
           ))}
         </div>
 
-        {/* Additional Skills */}
-        <div className="p-6 mt-12 rounded-lg shadow-lg">
-          <h3 className="mb-6 text-2xl font-semibold text-center text-gray-800">
-            Additional Skills
+        <div className="p-6 mt-10 rounded-lg shadow-lg">
+          <h3 className="mb-6 text-xl font-semibold text-center text-gray-800 md:text-2xl">
+            Core Concepts & Additional Skills
           </h3>
-          <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
-            {[
-              "Responsive Design",
-              "RESTful APIs",
-              "Version Control",
-              "Problem Solving",
-              "Team Collaboration",
-              "Code Review",
-              "Documentation",
-            ].map((skill, index) => (
-              <div
-                key={index}
-                className="p-3 text-center text-gray-800 transition-all duration-300 rounded-lg shadow-lg hover:bg-white/10"
+
+          <div className="flex flex-wrap gap-3 justify-center">
+            {additionalSkills.map((skill) => (
+              <span
+                key={skill}
+                className="px-4 py-2 text-sm font-medium text-pink-700 bg-pink-100 rounded-full transition-colors duration-300 hover:bg-pink-200"
               >
                 {skill}
-              </div>
+              </span>
             ))}
           </div>
         </div>

@@ -1,18 +1,44 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 const Modal = ({ isOpen, onClose, children, title }) => {
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleEscape = (event) => {
+      if (event.key === "Escape") onClose();
+    };
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", handleEscape);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", handleEscape);
+    };
+  }, [isOpen, onClose]);
+
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-opacity-50 bg-pink-50">
-      <div className="relative w-full p-6 bg-white rounded-lg shadow-xl max-w-7xl dark:bg-gray-800">
-        <div className="flex items-center justify-between pb-3 border-b border-gray-200 dark:border-gray-700">
-          <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
-            {title}
-          </h3>
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40"
+      onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+      aria-label={title}
+    >
+      <div
+        className="relative w-full max-w-6xl p-6 bg-white rounded-lg shadow-xl"
+        onClick={(event) => event.stopPropagation()}
+      >
+        <div className="flex items-center justify-between pb-3 border-b border-gray-200">
+          <h3 className="text-xl font-semibold text-gray-900">{title}</h3>
           <button
+            type="button"
             onClick={onClose}
-            className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
+            className="p-1 text-gray-500 rounded hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-pink-400"
+            aria-label="Close"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
