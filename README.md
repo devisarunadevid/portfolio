@@ -1,37 +1,75 @@
-# Personal Portfolio — Devis Aruna Devi D
 
-Personal portfolio built with **React** and **Tailwind CSS**, showcasing skills, projects, certifications, and experience in full-stack development.
+# 💻 Personal Portfolio — Devis Aruna Devi D
 
-**Live site:** [https://portfolio-wheat-three-19.vercel.app/](https://portfolio-wheat-three-19.vercel.app/)
+My personal developer portfolio, built with **React.js, Vite, and Tailwind CSS**, showcasing my technical skills, projects, certifications, education, and experience in full-stack development and AI integration.
 
-## Features
+🌐 **Live Site:** [Visit My Portfolio](https://portfolio-wheat-three-19.vercel.app/)
 
-- Hero introduction with call-to-action
-- About, education, skills, projects, and certifications
-- Contact form with EmailJS
-- Responsive layout for desktop and mobile
+## ✨ Features
 
-## Tech Stack
+- 👋 Hero section with introduction and professional profile links
+- 👩‍💻 About Me section with background and career interests
+- 🎓 Education and academic details
+- 🛠️ Technical skills across programming, frontend, backend, databases, and AI
+- 🚀 Projects with descriptions, technologies, and live demos
+- 📜 Technical certifications
+- 🏆 Achievements, including hackathon placements and coding milestones
+- 📄 Resume download functionality
+- 📬 Contact form integrated with EmailJS
+- 📱 Responsive layout for desktop and mobile devices
+- ✨ Interactive components and animations
 
-- React + Vite
-- Tailwind CSS
-- React Icons, EmailJS, AOS
+## 🖥️ Tech Stack
 
-## Key Projects
+- **Frontend:** React.js, JavaScript, HTML5, CSS3
+- **Styling:** Tailwind CSS
+- **Build Tool:** Vite
+- **Icons:** React Icons
+- **Animations:** AOS
+- **Contact Form:** EmailJS
+- **Version Control:** Git and GitHub
+- **Deployment:** Vercel
 
-- **Librario** — Full-stack library management with AI chatbot and payments
-- **VCET LeetCode Status Tracker** — Student coding progress dashboard
-- **GPA Calculator** — Academic grade management
-- **Coffee Bite** — Café website with registration and contact forms
+## 🚀 Key Projects
 
-## Run Locally
+- **Librario** — Full-stack library management system with a Gemini API-powered chatbot, payment processing, and email notifications.
+- **VCET LeetCode Status Tracker** — Application for tracking student LeetCode statistics and coding progress.
+- **GPA and CGPA Calculator** — Academic calculator with grade calculations, authentication, and PDF export.
+- **Coffee Bite** — Café website featuring menu information, registration, and contact forms.
+
+## 🏆 Achievements
+
+- Secured second place in the Symposolve Hackathon at VCET.
+- Secured sixth place in an inter-college Full Stack Development Hackathon.
+- Earned the LeetCode SQL 50 badge.
+- Solved 150+ LeetCode problems.
+
+## ⚙️ Run Locally
+
+### Prerequisites
+
+- Node.js and npm
+- Git
+
+### Installation
 
 ```bash
+git clone https://github.com/devisarunadevid/portfolio.git
+cd portfolio
 npm install
 npm run dev
 ```
 
-## Contact
+Open the local URL displayed in your terminal to view the portfolio.
 
-- Email: [devisarunadevidd@gmail.com](mailto:devisarunadevidd@gmail.com)
-- GitHub: [https://github.com/devisarunadevid](https://github.com/devisarunadevid)
+## 📬 Contact
+
+- **Email:** [devisarunadevidd@gmail.com](mailto:devisarunadevidd@gmail.com)
+- **GitHub:** [devisarunadevid](https://github.com/devisarunadevid)
+- **LinkedIn:** [Devis Aruna Devi D](https://www.linkedin.com/in/devis-aruna-devi-d)
+- **LeetCode:** [devisarunadevid](https://leetcode.com/u/devisarunadevid/)
+- **Portfolio:** [Live Website](https://portfolio-wheat-three-19.vercel.app/)
+
+---
+
+⭐ Thank you for visiting my portfolio!
